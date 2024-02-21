@@ -36,12 +36,13 @@ const quiz = [
 const question = document.getElementById("quest");
 console.log(question);
 //console.log(question.textContent);
+const nextB = document.getElementById("next-Btn");
 const option = document.getElementById("opt-1");
 const option2 = document.getElementById("opt-2");
 const option3 = document.getElementById("opt-3"); 
 const option4 = document.getElementById("opt-4");
-const answersEl = document.querySelectorAll(".answer")
-
+const answersEl = document.querySelectorAll(".answer");
+const display = document.getElementById("quest");
 console.log(option);
 console.log(option2);
 console.log(option3);
@@ -53,11 +54,47 @@ console.log(option4.textContent);
 let currQuest = 0;
 let score = 0;
 
-
-    question.textContent = quiz[currQuest].question;
+    
+question.textContent = quiz[currQuest].question;
 
     option.textContent = quiz[currQuest].answer1;
     option2.textContent = quiz[currQuest].answer2;
     option3.textContent = quiz[currQuest].answer3;
     option4.textContent = quiz[currQuest].answer4;
 
+    function nextQuestion(){
+        
+
+        nextB.addEventListener("click",()=>{
+            const nextu = 0;
+            const newans = nextu + 1;
+           const questionNext= currQuest+1;
+            // display.innerText = quiz[0].question;
+            display.innerText = quiz[newans].question;
+            option.textContent = quiz[questionNext].answer1;
+            option2.textContent = quiz[questionNext].answer2;
+            option3.textContent = quiz[questionNext].answer3;
+            option4.textContent = quiz[questionNext].answer4;
+            
+           
+        });
+    }
+    //nextQuestion();
+    
+       /* function showQuestion(){
+        let currentQuestion = quiz[currQuest];
+        let questionNo = currQuest + 1;
+        questionElement.innerText = questionNo + currQuest.question;
+    }
+    showQuestion();*/
+
+    /*document.getElementById("next-Btn").addEventListener("click", function() {
+        question.textContent = quiz[currQuest+1].question;
+        option.textContent = quiz[currQuest+1].answer1;
+        option2.textContent = quiz[currQuest+1].answer2;
+        option3.textContent = quiz[currQuest+1].answer3;
+        option4.textContent = quiz[currQuest+1].answer4;
+      });*/
+      
+       
+   
