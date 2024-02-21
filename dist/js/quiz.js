@@ -37,6 +37,7 @@ const question = document.getElementById("quest");
 console.log(question);
 //console.log(question.textContent);
 const nextB = document.getElementById("next-Btn");
+const anwers = document.getElementById("answer-btn");
 const option = document.getElementById("opt-1");
 const option2 = document.getElementById("opt-2");
 const option3 = document.getElementById("opt-3"); 
@@ -79,7 +80,18 @@ question.textContent = quiz[currQuest].question;
            
         });
     }
-    //nextQuestion();
+    nextQuestion();
+    function option1(){
+        anwers.addEventListener("click",()=>{
+                if(quiz.correctAns === anwers){
+                    alert("correct body");
+                }else{
+                    alert("sorry");
+                }
+            });
+    }
+    option1();
+    nextQuestion();
     
        /* function showQuestion(){
         let currentQuestion = quiz[currQuest];
